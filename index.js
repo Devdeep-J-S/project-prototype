@@ -6,36 +6,11 @@ const mongoose = require('mongoose');
 
 //dependency imports 
 const { MONGODB } = require('./config.js');
-const Post = require('./models/Post.js');
-const User = require('./models/User.js');
-
-const typeDefs = gql`
-  type Post {
-        id: ID!
-        body: String!
-        createdAt: String!
-        username: String!
-    }
-    type Query {
-        getPosts: [Post]
-    }
-`;
-
-const resolvers = {
-    Query: {
-        async getPosts() {
-            try {
-                const posts = await Post.find();
-                return posts;
-            } catch (err) {
-                throw new Error(err);
-            }
-        }
-    }
-};
+const resolvers = require('./graphql/resolvers');
+const typeDefs = require('./graphql/typeDefs');
 
 const server = new ApolloServer({
-    typeDefs, resolvers
+    typeDefs, resolvers , context: ({ req }) => ({ req })
 });
 
 
