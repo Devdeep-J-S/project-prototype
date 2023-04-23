@@ -1,5 +1,7 @@
 const { gql } = require("apollo-server");
 
+// here ... is called spread operator
+// ! means required
 const typeDefs = gql`
   type Post {
     id: ID!
@@ -22,6 +24,7 @@ const typeDefs = gql`
     createdAt: String!
     username: String!
   }
+
   type User {
     id: ID!
     email: String!
@@ -35,10 +38,13 @@ const typeDefs = gql`
     confirmPassword: String!
     email: String!
   }
+
+  # Query is used to fetch data
   type Query {
     getPosts: [Post]
     getPost(postId: ID!): Post
   }
+  # Mutation is used to create, update, or delete data
   type Mutation {
     register(registerInput: RegisterInput): User!
     login(username: String!, password: String!): User!

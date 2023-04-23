@@ -1,6 +1,6 @@
+// dependencies
 const { gql } = require("apollo-server-express");
 const { describe } = require("node:test");
-
 const { ApolloClient, InMemoryCache } = require("@apollo/client");
 
 // intialize apollo client

@@ -1,19 +1,22 @@
 //relative imports
 const { ApolloServer } = require("apollo-server");
-const gql = require("graphql-tag");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 //dependency imports
-const { MONGODB } = require("./config.js");
 const resolvers = require("./graphql/resolvers");
 const typeDefs = require("./graphql/typeDefs");
 
+MONGODB = process.env.MONGODB;
+
+// Apollo server setup
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: ({ req }) => ({ req }),
 });
 
+//database connection
 mongoose
   .connect(MONGODB, { useNewUrlParser: true })
   .then(() => {

@@ -1,24 +1,25 @@
 {
   "dependencies": {
-    "@apollo/client": "^3.7.12",
     "apollo-server": "^3.12.0",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.4",
-    "ndoe": "^0.0.0",
     "node": "^19.8.1",
-    "prettier": "^2.8.7",
-    "react": "^18.2.0"
+    "nodemon": "^2.0.22",
+    "package.json": "^0.0.0"
   },
-  "devDependencies": {
-    "@babel/register": "^7.21.0",
-    "apollo-boost": "^0.4.9",
-    "cross-fetch": "^3.1.5",
-    "graphql": "^15.8.0",
-    "jest": "^29.5.0"
+  "name": "project-prototype",
+  "description": "Devdeep's work ",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
   },
   "scripts": {
-    "start": "node index.js",
-    "test": "jest"
-  }
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Devdeep",
+  "license": "ISC"
 }
